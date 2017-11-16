@@ -1,0 +1,5 @@
+= ODL - Integrated Exercise
+François Roland <francois.roland@umons.ac.be>
+2017-11-16
+
+This repository contains the instructions of the integrated exercise.
