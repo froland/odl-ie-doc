@@ -1,0 +1,99 @@
+= ODL - Exercice intégré: Organisation d'événements
+François Roland <francois.roland@umons.ac.be>
+2017-11-15
+:icons: font
+:experimental:
+ifdef::backend-html5[]
+:source-highlighter: highlightjs
+endif::[]
+ifdef::backend-pdf[]
+:source-highlighter: coderay
+endif::[]
+
+
+L'exercice suivant sera réalisé au cours de quatre séances de travaux pratiques.
+L'objectif est de réaliser une application complète, reprenant différentes facettes de la conception orientée objet, de la programmation Java et des Designs Patterns.
+
+La première séance sera consacrée à la définition des classes métiers et de leurs méthodes (constructeurs, accesseurs, toString).
+Ces classes métiers seront choisies par rapport aux concepts clés de l'application tels que les ressources, les tâches, les utilisateurs, etc.
+
+La deuxième séance permettra de se concentrer sur les interfaces graphiques de l'application.
+
+La troisième séance sera consacrée à l'algorithme d'affectation des tâches aux ressources et aux travailleurs.
+Aucun algorithme d'affectation « évolué » ne doit être implémenté dans le logiciel ; cependant le logiciel doit être conçu pour pouvoir implanter d'autres algorithmes (cfr design pattern Strategy).
+
+TIP: Une séparation claire entre ces trois aspects de l'application est demandée.
+L'utilisation de packages Java peut vous y aider.
+
+La quatrième séance permettra de revenir sur le diagramme des cas d'utilisation, sur le diagramme de classes et de détailler deux fonctionnalités à l'aide de diagrammes de séquence.
+
+= Remise des résultats
+
+Le projet réalisé sera sauvegardé régulièrement sur votre dépôt GitHub.
+La documentation produite sera enregistrée au format PDF à la racine de votre dépôt GitHub.
+
+WARNING: Seul le dernier commit effectué avant le lundi 04/12/2017 20:00 sera pris en compte pour l'évaluation.
+
+= Cahier des charges
+
+****
+* Nous souhaitons un logiciel pour nous aider à organiser des événements de type " concert, spectacle ".
+
+* La difficulté que nous rencontrons est de gérer l'ensemble des tâches et l'utilisation des ressources matérielles et humaines.
+
+* Les personnes sont amenées à réaliser des tâches à différents endroits sur le terrain.
+Il peut s'agir d'installer une scène, de transporter du matériel d'un point à un autre, etc.
+
+* Nous avons besoin de savoir à tout moment où se trouve le matériel et les personnes qui l'utilisent.
+
+* L'idéal est que le logiciel nous planifie des tâches et des ressources.
+Chaque chef d'équipe peut avoir une manière différente de réaliser cette planification.
+
+* Chacun doit à tout moment savoir ce qu'il a à faire et les chefs d'équipe doivent pouvoir suivre l'évolution du travail.
+
+* Le manager souhaite avoir une vue d'ensemble de l'évolution des tâches.
+****
+
+Cet exercice intégré se concentrera sur les quatre aspects suivants du logiciel d'organisation d'événements :
+
+. la gestion des utilisateurs (Manager, Team, Worker et Skill) ;
+. la gestion des ressources (Resource) ;
+. la gestion des tâches (Task, Skill) ;
+. l'affectation des tâches aux ressources (Planning).
+
+Pour chacune de ces 4 parties, un écran de gestion doit être proposé afin de permettre la création, la modification et la suppression d'éléments (Resource, Skill, Task).
+L'ensemble des employés (Manager et Worker) sera supposé connu avant le lancement du programme et donc instancié directement dans le code au début de la méthode main; aucun écran de gestion n'est donc demandé pour les Manager et Worker.
+
+La représentation de l'agenda des ressources et des travailleurs doit également être précisée avec notamment un choix de granularité et de structures de données (cfr les discussions menées lors de l'analyse du logiciel durant les séances de cours).
+Une proposition est formulée dans le diagramme de classes ci­dessous.
+
+En plus de ces écrans de gestion, une vue de type «dashboard» (tableau de bord) doit être proposée afin d'indiquer à chacun ses informations d'intérêt :
+
+* pour le Worker : son planning de travail pour les prochaines heures ;
+* pour le Manager : un aperçu des tâches assignées à l'équipe.
+
+_Lorsque le fonctionnement de base du programme est en place_, les fonctionnalités suivantes peuvent être apportées :
+
+. permettre l'enregistrement et le chargement de l'état du programme dans un fichier par la sérialisation d'objets ;
+. introduire un système de notifications pour permettre à un utilisateur d'être averti en cas de changement de certains objets (Resource, Task et Worker) ;
+. offrir un écran de connexion avec login/mot­de­passe au démarrage de l'application.
+Avant cette étape, un simple menu déroulant du choix de l'utilisateur doit être proposé afin de prendre le rôle de l'un ou l'autre employé.
+
+Le diagramme de classes ci­dessous peut être utilisé comme base de travail.
+Il doit être considéré à titre indicatif plutôt que comme une consigne à respecter.
+Certains changements et compléments devront être apportés au fil de l'implémentation du logiciel.
+
+Comme cela a été exposé au cours, l'application peut tirer profit de certains Design Patterns.
+Nous vous demandons donc d'utiliser dans votre implémentation :
+
+* le design pattern Strategy sera utilisé afin de gérer les différents algorithmes d'affectation des tâches aux ressources et aux travailleurs ;
+* le design pattern Composite assurera la gestion des ressources pouvant contenir elles-­mêmes des sous-­ressources et ce, sans limite de « profondeur » ;
+* le design pattern Observer pour permettre les notifications de changement dans les classes Resource, Task et Worker.
+
+[bibliography]
+== Références
+
+* Deitel, H. M. & Deitel, P. J. (2002), _JAVA Comment programmer – Quatrième édition_. Les éditions Reynald Goulet INC.
+* Manneback, P. & Frémal, S. (2014-2015) _Travaux pratiques de Méthodologie et Langage de Programmation_. UMons.
+* Manneback, P. (2005-2006) _Méthodologie et Langages de Programmation_. UMons.
+* _Java Platform Standard Edition 8 Documentation_. Récupéré de https://docs.oracle.com/javase/8/docs/
