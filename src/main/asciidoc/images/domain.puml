@@ -1,0 +1,33 @@
+@startuml
+
+hide empty members
+
+class Project
+class Task {
+	- description
+	- expectedDuration
+	- deadline
+	- progress
+}
+class AgendaEntry {
+	- startTime
+	- endTime
+}
+class Skill
+class Resource
+class Manager
+class Worker
+class Team
+class Algorithm
+
+Project o-- Task
+Manager --> Algorithm : > prefers
+Manager - Team
+Team *-- Worker
+Worker o--> Skill : > has
+Task --> Skill : > requires
+Task --> Resource : > requires
+AgendaEntry - Task
+Worker - AgendaEntry
+Resource o- Resource
+@enduml

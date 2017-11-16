@@ -27,14 +27,14 @@ L'utilisation de packages Java peut vous y aider.
 
 La quatrième séance permettra de revenir sur le diagramme des cas d'utilisation, sur le diagramme de classes et de détailler deux fonctionnalités à l'aide de diagrammes de séquence.
 
-= Remise des résultats
+== Remise des résultats
 
 Le projet réalisé sera sauvegardé régulièrement sur votre dépôt GitHub.
 La documentation produite sera enregistrée au format PDF à la racine de votre dépôt GitHub.
 
 WARNING: Seul le dernier commit effectué avant le lundi 04/12/2017 20:00 sera pris en compte pour l'évaluation.
 
-= Cahier des charges
+== Cahier des charges
 
 ****
 * Nous souhaitons un logiciel pour nous aider à organiser des événements de type " concert, spectacle ".
@@ -79,9 +79,12 @@ _Lorsque le fonctionnement de base du programme est en place_, les fonctionnalit
 . offrir un écran de connexion avec login/mot­de­passe au démarrage de l'application.
 Avant cette étape, un simple menu déroulant du choix de l'utilisateur doit être proposé afin de prendre le rôle de l'un ou l'autre employé.
 
-Le diagramme de classes ci­dessous peut être utilisé comme base de travail.
+Le diagramme de classes ci-­dessous peut être utilisé comme base de travail.
 Il doit être considéré à titre indicatif plutôt que comme une consigne à respecter.
 Certains changements et compléments devront être apportés au fil de l'implémentation du logiciel.
+
+.Ébauche du domain model
+image::domain.svg[]
 
 Comme cela a été exposé au cours, l'application peut tirer profit de certains Design Patterns.
 Nous vous demandons donc d'utiliser dans votre implémentation :
@@ -90,10 +93,16 @@ Nous vous demandons donc d'utiliser dans votre implémentation :
 * le design pattern Composite assurera la gestion des ressources pouvant contenir elles-­mêmes des sous-­ressources et ce, sans limite de « profondeur » ;
 * le design pattern Observer pour permettre les notifications de changement dans les classes Resource, Task et Worker.
 
+En plus du code créé, vous devrez également fournir une documentation.
+Cette documentation décrira le scope de l'application et mettra en évidence certaines parties de son design.
+Elle doit permettre à l'évaluateur de comprendre ce que vous avez fait et pourquoi vous l'avez fait de cette manière.
+
 [bibliography]
 == Références
 
-* Deitel, H. M. & Deitel, P. J. (2002), _JAVA Comment programmer – Quatrième édition_. Les éditions Reynald Goulet INC.
-* Manneback, P. & Frémal, S. (2014-2015) _Travaux pratiques de Méthodologie et Langage de Programmation_. UMons.
-* Manneback, P. (2005-2006) _Méthodologie et Langages de Programmation_. UMons.
+* Deitel, H. M., & Deitel, P. J. (2002). _Java : comment programmer (4th ed.)_. Les éditions Reynald Goulet INC.
+* Deitel, P. J., & Deitel, H. M. (2007). _Java: how to program (7th ed.)_. Les éditions Reynald Goulet INC.
+* Evans, E. (2003). _Domain-driven design: tackling complexity in the heart of software (1st ed.)_. Addison-Wesley Professional.
+* Manneback, P., & Frémal, S. (2016). _Travaux pratiques de Méthodologie et Langage de Programmation_. UMons.
+* Manneback, P. (2005). _Méthodologie et Langages de Programmation_. UMons.
 * _Java Platform Standard Edition 8 Documentation_. Récupéré de https://docs.oracle.com/javase/8/docs/
